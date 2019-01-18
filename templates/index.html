@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col-md-3 col-sm-12">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+
+            <!-- TODO -->
+            <p>Select two files to compare and how you would like to compare them, either by lines, by sentences or by substrings.  If you want to compare
+            by substring, please specify the length of the substring you'd like to compare.
+            </p>
+            <h2>Files:</h2><hr>
+            File 1: <input name="file1" type="file" class="file"><br>
+            File 2: <input name="file2" type="file" class="file"><br>
+            <h2>Compare by:</h2><hr>
+            <input name="algorithm" type="radio" value="lines"> Lines<br>
+            <input name="algorithm" type="radio" value="sentences"> Sentences<br>
+            <input name="algorithm" type="radio" value="substrings"> Substrings
+            | Length: <input name="length" type="number"><br>
+            <button type="submit" class="submit">Compare</button>
+
+        </form>
+    </div>
+
+{% endblock %}
